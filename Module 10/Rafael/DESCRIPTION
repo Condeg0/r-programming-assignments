@@ -1,0 +1,17 @@
+Package: qfTools
+Title: A Toolkit for Quantitative Financial Analysis
+Version: 0.0.0.9000
+Authors@R: person("Rafael", "Condé Gomes", email = "your.email@example.com", role = c("aut", "cre"))
+Description: Provides essential tools for quantitative finance and risk
+    analysis. This package simplifies the calculation of key performance
+    metrics, risk measures like Value at Risk (VaR), and the creation
+    of standard financial visualizations such as drawdown plots.
+Depends: R (>= 3.1.2)
+Imports:
+    ggplot2,
+    dplyr,
+    lubridate
+License: GPL-3
+LazyData: true
+URL: https://github.com/YourUsername/qfTools
+BugReports: https://github.com/YourUsername/qfTools/issues
