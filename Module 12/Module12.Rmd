@@ -1,0 +1,57 @@
+---
+title: "My R-markdown"
+output:
+  pdf_document: default
+  html_document: default
+date: "2025-11-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to R Markdown
+
+R Markdown is a simple file format. It lets you write regular text, embed R code, and see the code's results all in one document. It's a tool for making reproducible reports.
+
+
+# Narrative and Analysis
+
+In this report, we will look at the SP500 dataset from the Ecdat package. This dataset contains daily returns for the S&P 500. We will load the data, run a quick summary, and then plot the distribution of returns to understand its basic properties.
+
+
+## Using LaTeX for Math
+
+R Markdown also lets you write math formulas using LaTeX. You can write simple math inline, like $\alpha + \beta$, by wrapping it in single dollar signs.For larger equations, you can put them on their own line  like the formula for a simple linear regression:
+
+$$
+Y = \beta_0 + \beta_1 X + \epsilon
+$$
+
+## R Code Chunk 1: Load Data and Summary
+
+This first code chunk loads the Ecdat library and the SP500 dataset. It then runs a summary() function on the daily returns column.
+
+```{r}
+# Load the library and dataset
+library(Ecdat)
+data("SP500", package = "Ecdat")
+sp_df <- as.data.frame(SP500)
+
+# Run a simple analysis
+summary(sp_df$r500)
+```
+
+## R Code Chunk 2: Generate Plot
+
+This second code chunk uses the loaded data to create a plot. A histogram is a good way to see the distribution of the S&P 500's daily returns.
+
+```{r}
+# Generate a plot
+hist(sp_df$r500, 
+     breaks = 100, 
+     main = "Distribution of S&P 500 Daily Returns", 
+     xlab = "Daily Return (r500)")
+```
+
+
