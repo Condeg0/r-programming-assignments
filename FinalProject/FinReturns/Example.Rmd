@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+output:
+  pdf_document: default
+  html_document: default
+date: "2025-11-29"
+---
+
+
+# Load data and libraries
+```{r}
+library(FinReturns)
+library(ggplot2)
+
+devtools::document()
+data(sp500)
+asset <- new_asset_returns(sp500, date_col = "Date", return_col = "Return", asset_name = "SP500")
+```
+
+
+# Daily Aggregation
+```{r}
+plot(asset, type = "hist", frequency = "daily")
+plot(asset, type = "time", frequency = "daily")
+```
+
+
+
+# Monthly Aggregation
+```{r}
+plot(asset, type = "hist", frequency = "monthly")
+plot(asset, type = "time", frequency = "monthly")
+```
+
+# Yearly Aggregation
+```{r}
+plot(asset, type = "time", frequency = "yearly")
+plot(asset, type = "hist", frequency = "yearly")
+```
+
+
